@@ -1,8 +1,12 @@
 <div style="text-align:center">
-  <h1>
-    Welcome to {{title}}!
-  </h1>
-  <h3>{{company.name}}</h3>
-  <p>{{company.address}}</p>
-  <button class="btn btn-primary">a</button>
+  <h1>{{'Value: ' + value}}</h1>
+  <img src="{{ imageSrc }}" alt="">
+  <img [src]="imageSrc" alt="">
+  <!-- <button class="btn btn-success" [disabled]="true">Show</button> -->
+  <button class="btn btn-success" (click)="showTitle()">
+    Show
+  </button>
+  <button class="btn btn-success" (click)="incr();">
+    Show
+  </button>
 </div>

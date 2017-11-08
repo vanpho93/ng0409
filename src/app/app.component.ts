@@ -9,11 +9,21 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
+  value = 0;
   title = 'Khoa Pham';
   company = {
     name: 'KPT Training',
     address: '92 LRT'
   };
+  imageSrc = 'https://angular.io/assets/images/logos/angular/shield-large.svg';
+
+  showTitle() {
+    console.log(this.title);
+  }
+
+  incr() {
+    this.value++;
+  }
 }
 
 // module.exports = { AppComponent };
