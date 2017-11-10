@@ -14,6 +14,13 @@ export class AppComponent {
   txtVn = '';
   isLoggedIn = true;
   subjects = ['NodeJS', 'Angular', 'React', 'Android'];
+  currentStyle = {
+    color: 'blue',
+    fontWeight: 'bold'
+  };
+  currentClass = {
+    daThuoc: true
+  };
   words = [
     { en: 'one', vn: 'mot', isMemorized: true },
     { en: 'two', vn: 'hai', isMemorized: false },

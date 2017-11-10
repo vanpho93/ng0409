@@ -14,8 +14,12 @@
     Add
   </button>
   <div *ngFor="let word of words">
-    <h3 [style.color]="word.isMemorized ? 'green': 'red'">{{ word.en }}</h3>
-    <p>{{ word.vn }}</p>
+    <h3
+      [class.daThuoc]="word.isMemorized"
+      [class.chuaThuoc]="!word.isMemorized"
+    >{{ word.en }}</h3>
+    <h3 [ngClass]="currentClass">{{ word.en }}</h3>
+    <p [ngStyle]="currentStyle">{{ word.vn }}</p>
     <button class="btn btn-danger" (click)="removeWord(word.en)">Remove</button>
   </div>
 </div>
