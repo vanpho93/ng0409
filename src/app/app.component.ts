@@ -9,20 +9,16 @@ import { Component } from '@angular/core';
 })
 
 export class AppComponent {
-  value = 0;
-  title = 'Khoa Pham';
-  company = {
-    name: 'KPT Training',
-    address: '92 LRT'
-  };
-  imageSrc = 'https://angular.io/assets/images/logos/angular/shield-large.svg';
-
-  showTitle() {
-    console.log(this.title);
-  }
-
-  incr() {
-    this.value++;
+  txtEmail = '';
+  isLoggedIn = true;
+  subjects = ['NodeJS', 'Angular', 'React', 'Android'];
+  words = [
+    { en: 'one', vn: 'mot' },
+    { en: 'two', vn: 'hai' },
+    { en: 'three', vn: 'ba' },
+  ];
+  changeStatus() {
+    this.isLoggedIn = !this.isLoggedIn;
   }
 }
 

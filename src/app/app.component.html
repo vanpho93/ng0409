@@ -1,12 +1,13 @@
 <div style="text-align:center">
-  <h1>{{'Value: ' + value}}</h1>
-  <img src="{{ imageSrc }}" alt="">
-  <img [src]="imageSrc" alt="">
-  <!-- <button class="btn btn-success" [disabled]="true">Show</button> -->
-  <button class="btn btn-success" (click)="showTitle()">
-    Show
+  <input placeholder="Email" [(ngModel)]="txtEmail">
+  <p>{{txtEmail}}</p>
+  <h3 *ngIf="isLoggedIn">Giao dich</h3>
+  <button class="btn btn-success" (click)="changeStatus()">
+    {{ isLoggedIn ? 'Hide' : 'Show' }}
   </button>
-  <button class="btn btn-success" (click)="incr();">
-    Show
-  </button>
+  <p *ngFor="let subject of subjects">{{subject}}</p>
+  <div *ngFor="let word of words">
+    <h3>{{ word.en }}</h3>
+    <p>{{ word.vn }}</p>
+  </div>
 </div>
