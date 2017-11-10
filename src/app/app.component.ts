@@ -10,15 +10,31 @@ import { Component } from '@angular/core';
 
 export class AppComponent {
   txtEmail = '';
+  txtEn = '';
+  txtVn = '';
   isLoggedIn = true;
   subjects = ['NodeJS', 'Angular', 'React', 'Android'];
   words = [
-    { en: 'one', vn: 'mot' },
-    { en: 'two', vn: 'hai' },
-    { en: 'three', vn: 'ba' },
+    { en: 'one', vn: 'mot', isMemorized: true },
+    { en: 'two', vn: 'hai', isMemorized: false },
+    { en: 'three', vn: 'ba', isMemorized: true },
   ];
+  addWord() {
+    this.words.push({
+      en: this.txtEn,
+      vn: this.txtVn,
+      isMemorized: false
+    });
+    this.txtEn = '';
+    this.txtVn = '';
+  }
   changeStatus() {
     this.isLoggedIn = !this.isLoggedIn;
+  }
+
+  removeWord(en) {
+    const index = this.words.findIndex(word => word.en === en);
+    this.words.splice(index, 1);
   }
 }
 

@@ -6,8 +6,16 @@
     {{ isLoggedIn ? 'Hide' : 'Show' }}
   </button>
   <p *ngFor="let subject of subjects">{{subject}}</p>
+  <input placeholder="En" [(ngModel)]="txtEn">
+  <br />
+  <input placeholder="Vn" [(ngModel)]="txtVn">
+  <br />
+  <button class="btn btn-primary" (click)="addWord();">
+    Add
+  </button>
   <div *ngFor="let word of words">
-    <h3>{{ word.en }}</h3>
+    <h3 [style.color]="word.isMemorized ? 'green': 'red'">{{ word.en }}</h3>
     <p>{{ word.vn }}</p>
+    <button class="btn btn-danger" (click)="removeWord(word.en)">Remove</button>
   </div>
 </div>
